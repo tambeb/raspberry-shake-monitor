@@ -28,6 +28,8 @@ Settings are stored in __serverWebSettings.json__
   * httpsServer - whether or not you want to run an https server (you have to create or have an SSL cert)
   * passphraseFile - file that contains your passphrase for your SSL cert
   * pfxFile - filename of your cert in .p12 format
+
+You can set the name of your shake in __webSettings.json__.
   
 ### Running
 There are two servers, one for logging UDP data from the Shake and another for serving up the web app. The web server communicates with the logger to get Shake data as needed. I have them separated so that making changes to the web app (requiring you to restart it) won't interrupt the data logging. Once you get your shake set up and sending you can more or less leave the logger running indefinitely so that you can have uninterrupted historical data.
