@@ -1,6 +1,9 @@
 {
-  "ehzAxisTickInterval": 1000,
+  "ehzAxisTickInterval": "1000",
   "hdfAxisTickInterval": "5000",
+  "enzAxisTickInterval": "5000",
+  "ennAxisTickInterval": "5000",
+  "eneAxisTickInterval": "5000",
   "axisTickIntervalOptions": [
     "50",
     "100",
