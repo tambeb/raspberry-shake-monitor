@@ -4,6 +4,8 @@ A logging server and a separate server for web based live charting of Raspberry 
 ## Demo
 [Live Demo with my Raspberry Shake](https://shakedemo.tambeb.com)
 
+Note: Settings for the web app are synced across all instances. So the demo will reflect whatever settings the last person to modify them chose (i.e., time-horizon, chart axis range, update frequency, etc.). If multiple people happen to be looking at the demo and one person changes something, it'll immediately reflect for everyone else. So if you notice weird things happening, this is likely why.   
+
 ## Installation 
 ```
 git clone https://github.com/tambeb/raspberry-shake-monitor.git
