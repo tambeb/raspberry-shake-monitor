@@ -1,0 +1,35 @@
+{
+  "ehzAxisTickInterval": 1000,
+  "hdfAxisTickInterval": "5000",
+  "axisTickIntervalOptions": [
+    "50",
+    "100",
+    "500",
+    "1000",
+    "2000",
+    "5000",
+    "7500",
+    "10000"
+  ],
+  "chartUpdatesInterval": "0",
+  "chartUpdatesIntervalOptions": [
+    "0",
+    "1",
+    "2",
+    "5",
+    "10"
+  ],
+  "timeHorizon": "30",
+  "timeHorizonOptions": [
+    "5",
+    "10",
+    "30",
+    "60",
+    "120",
+    "300",
+    "600"
+  ],
+  "EHZ_bias": 16306.205423728814,
+  "HDF_bias": 11460.357288135594,
+  "raspberryShakeName": "YOURNAMEHERE"
+}

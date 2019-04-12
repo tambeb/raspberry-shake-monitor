@@ -1,0 +1,19 @@
+{
+  "name": "raspberry-shake-monitor",
+  "version": "1.0.0",
+  "description": "Logging server and web based live charting of Raspberry Shake data",
+  "main": "server.js",
+  "scripts": {},
+  "author": {
+    "name": "Tambe Barsbay",
+    "email": "t@mbebarsbay.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/tambeb/raspberry-shake-monitor",
+  "dependencies": {
+    "chart.js": "2.8.0",
+    "lodash": "4.17.11",
+    "socket.io-client": "2.2.0",
+    "vue": "2.6.9"
+  }
+}

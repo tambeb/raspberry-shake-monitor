@@ -1,0 +1,8 @@
+{
+  "httpPort": 80,
+  "httpsPort": 443,
+  "udpPort": 8093,
+  "httpsServer": false,
+  "passphraseFile": "YOURFILE.pem",
+  "pfxFile": "YOURFILE.p12"
+}

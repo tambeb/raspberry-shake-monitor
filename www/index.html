@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head id="title">
+  <meta charset="utf-8" />
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <title>Raspberry Shake Monitor</title>
+  <link rel="manifest"
+        href="manifest.json">
+  <link rel="icon"
+        sizes="192x192"
+        href="icon_192.png">
+  <link rel="stylesheet"
+        href="index.min.css">
+  <meta name="theme-color"
+        content="#917464">
+</head>
+
+<body>
+  <div v-cloak
+       id="app">
+
+    <ul class="margin-right">
+      <li class="title left">
+        {{settings.raspberryShakeName + ' ' + secondaryTitle}}
+      </li>
+      <li class="right">
+        <div class="haveCursor button"
+             @click="toggleHistory()">
+          <i class="icon-image-preview haveCursor resize center-vertical"
+             :class="marginsAndHistoryIcons()"
+             :title="historicalTitle">
+          </i>{{blankIfMobile(historicalTitle)}}
+        </div>
+      </li>
+      <li v-if="!historical"
+          class="dropdown right">
+        <div class="haveCursor button">
+          <i class="icon-image-preview outline-schedule resize haveCursor center-vertical"
+             :class="marginRightIfNotMobile()">
+          </i>{{blankIfMobile('Time Horizon')}}
+        </div>
+        <div class="dropdown-content"
+             :class="dropdownRightIfMobile()">
+          <a @click="onSelect('timeHorizon',x)"
+             v-for="x in settings['timeHorizonOptions']"
+             href="#"
+             :value="x">{{x}} seconds
+          </a>
+        </div>
+      </li>
+      <li v-if="!historical"
+          class="dropdown right">
+        <div class="haveCursor button">
+          <i class="icon-image-preview outline-update resize haveCursor center-vertical"
+             :class="marginRightIfNotMobile()">
+          </i>{{blankIfMobile('Update Frequency')}}
+        </div>
+        <div class="dropdown-content"
+             :class="dropdownRightIfMobile()">
+          <a @click="onSelect('chartUpdatesInterval',x)"
+             v-for="x in settings['chartUpdatesIntervalOptions']"
+             href="#"
+             :value="x">{{x}} seconds
+          </a>
+        </div>
+      </li>
+      <li v-if="!historical"
+          class="right">
+        <div class="haveCursor button"
+             @click="togglePause()">
+          <i class="icon-image-preview haveCursor resize center-vertical"
+             :class="marginsAndPauseIcons()"
+             :title="pausedTitle">
+          </i>
+        </div>
+      </li>
+    </ul>
+
+    <div class="padding-content">
+      <div class="grid-container"
+           v-if="!historical">
+        <template v-for="x in lineCharts">
+          <div class="grid-item">
+            <line-chart :ref="x.name + 'Chart'"
+                        :id="x.name + 'Chart'"
+                        :name="x.name"></line-chart>
+          </div>
+        </template>
+      </div>
+
+      <div v-else="historical">
+        <div class="grid-container-small">
+          <div class="grid-item">Year:
+            <select v-model="historicalRange.year">
+              <option v-for="x in app.historicalLogsList.year">{{x}}</option>
+            </select>
+          </div>
+
+          <div class="grid-item">Month:
+            <select v-model="historicalRange.month"
+                    :disabled="!historicalRange.year">
+              <option v-for="x in app.historicalLogsList.month">{{x}}</option>
+            </select>
+          </div>
+
+          <div class="grid-item">Day:
+            <select v-model="historicalRange.day"
+                    :disabled="!historicalRange.month">
+              <option v-for="x in app.historicalLogsList.day">{{x}}</option>
+            </select>
+          </div>
+
+          <div class="grid-item">Time:
+            <select v-model="historicalRange.hour"
+                    :disabled="!historicalRange.day">
+              <option v-for="x in app.historicalLogsList.hour">{{x}}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-container">
+        <template v-for="x in lineChartsHistorical">
+          <div class="grid-item">
+            <line-chart-historical :ref="x.name + 'HistoricalChart'"
+                                   :id="x.name + 'HistoricalChart'"
+                                   :name="x.name"></line-chart-historical>
+          </div>
+        </template>
+      </div>
+    </div>
+  </div>
+
+  <script src="index.min.js"></script>
+
+</body>
+
+</html>
