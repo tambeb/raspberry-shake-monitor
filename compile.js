@@ -4,7 +4,7 @@ const readFile = util.promisify( fs.readFile );
 var path = require( 'path' );
 const root = path.resolve();
 var compile = require( 'google-closure-compiler-js' );
-var files = [ 'www/node_modules/lodash/lodash.min.js', 'www/node_modules/vue/dist/vue.min.js', 'www/node_modules/socket.io-client/dist/socket.io.js', 'www/node_modules/chart.js/dist/Chart.bundle.min.js', 'www/chartjs-plugin-downsample.js', 'www/index.js' ]
+var files = [ 'www/node_modules/lodash/lodash.min.js', 'www/node_modules/vue/dist/vue.min.js', 'www/node_modules/socket.io-client/dist/socket.io.js', 'www/node_modules/chart.js/dist/Chart.bundle.min.js', 'www/chartjs-plugin-downsample.js', 'www/node_modules/vue-simple-spinner/dist/vue-simple-spinner.min.js', 'www/index.js' ]
 
 Promise.all( files.map( openFile ) ).then( function ( data ) {
   data = data.join( '\n' );
