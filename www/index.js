@@ -438,6 +438,7 @@ var app = new Vue( {
   },
   data: {
     disconnected: false,
+    loading: false,
     settings: {},
     settingsClone: {},
     saveChanges: false,
@@ -466,6 +467,12 @@ var app = new Vue( {
   computed: {
   },
   methods: {
+    displayModal: function () {
+      return {
+        'show': this.loading,
+        'noshow': !this.loading
+      }
+    },
     dropdownRightIfMobile: function ( value ) {
       return {
         'dropdown-right': mobile
@@ -552,8 +559,10 @@ var app = new Vue( {
             app.requestHistoricalList( app.historicalRange );
           }
           else {
+            app.loading = true;
             socket.emit( 'getHistoricalData', app.historicalRange, function ( response ) {
               app.lineChartsHistorical = [];
+              app.loading = false;
               app.lineChartsHistorical = response;
               app.$nextTick( function () {
                 for ( let i in response ) {

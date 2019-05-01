@@ -119,16 +119,20 @@
             </select>
           </div>
         </div>
-      </div>
-
-      <div class="grid-container">
-        <template v-for="x in lineChartsHistorical">
-          <div class="grid-item">
-            <line-chart-historical :ref="x.name + 'HistoricalChart'"
-                                   :id="x.name + 'HistoricalChart'"
-                                   :name="x.name"></line-chart-historical>
-          </div>
-        </template>
+        <div class="modal"
+             :class="displayModal()">
+          <vue-simple-spinner line-fg-color="#917464">
+          </vue-simple-spinner>
+        </div>
+        <div class="grid-container">
+          <template v-for="x in lineChartsHistorical">
+            <div class="grid-item">
+              <line-chart-historical :ref="x.name + 'HistoricalChart'"
+                                     :id="x.name + 'HistoricalChart'"
+                                     :name="x.name"></line-chart-historical>
+            </div>
+          </template>
+        </div>
       </div>
     </div>
   </div>
