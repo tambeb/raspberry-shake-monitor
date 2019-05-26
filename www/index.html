@@ -2,24 +2,33 @@
 <html lang="en">
 
 <head id="title">
+  <script async
+    src="https://www.googletagmanager.com/gtag/js?id=UA-77535705-5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push( arguments ); }
+    gtag( 'js', new Date() );
+
+    gtag( 'config', 'UA-77535705-5' );
+  </script>
   <meta charset="utf-8" />
   <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+    content="width=device-width, initial-scale=1.0">
   <title>Raspberry Shake Monitor</title>
   <link rel="manifest"
-        href="manifest.json">
+    href="manifest.json">
   <link rel="icon"
-        sizes="192x192"
-        href="icon_192.png">
+    sizes="192x192"
+    href="icon_192.png">
   <link rel="stylesheet"
-        href="index.min.css">
+    href="index.min.css">
   <meta name="theme-color"
-        content="#917464">
+    content="#917464">
 </head>
 
 <body>
   <div v-cloak
-       id="app">
+    id="app">
 
     <ul class="margin-right">
       <li class="title left">
@@ -27,52 +36,52 @@
       </li>
       <li class="right">
         <div class="haveCursor button"
-             @click="toggleHistory()">
+          @click="toggleHistory()">
           <i class="icon-image-preview haveCursor resize center-vertical"
-             :class="marginsAndHistoryIcons()"
-             :title="historicalTitle">
+            :class="marginsAndHistoryIcons()"
+            :title="historicalTitle">
           </i>{{blankIfMobile(historicalTitle)}}
         </div>
       </li>
       <li v-if="!historical"
-          class="dropdown right">
+        class="dropdown right">
         <div class="haveCursor button">
           <i class="icon-image-preview outline-schedule resize haveCursor center-vertical"
-             :class="marginRightIfNotMobile()">
+            :class="marginRightIfNotMobile()">
           </i>{{blankIfMobile('Time Horizon')}}
         </div>
         <div class="dropdown-content"
-             :class="dropdownRightIfMobile()">
+          :class="dropdownRightIfMobile()">
           <a @click="onSelect('timeHorizon',x)"
-             v-for="x in settings['timeHorizonOptions']"
-             href="#"
-             :value="x">{{x}} seconds
+            v-for="x in settings['timeHorizonOptions']"
+            href="#"
+            :value="x">{{x}} seconds
           </a>
         </div>
       </li>
       <li v-if="!historical"
-          class="dropdown right">
+        class="dropdown right">
         <div class="haveCursor button">
           <i class="icon-image-preview outline-update resize haveCursor center-vertical"
-             :class="marginRightIfNotMobile()">
+            :class="marginRightIfNotMobile()">
           </i>{{blankIfMobile('Update Frequency')}}
         </div>
         <div class="dropdown-content"
-             :class="dropdownRightIfMobile()">
+          :class="dropdownRightIfMobile()">
           <a @click="onSelect('chartUpdatesInterval',x)"
-             v-for="x in settings['chartUpdatesIntervalOptions']"
-             href="#"
-             :value="x">{{x}} seconds
+            v-for="x in settings['chartUpdatesIntervalOptions']"
+            href="#"
+            :value="x">{{x}} seconds
           </a>
         </div>
       </li>
       <li v-if="!historical"
-          class="right">
+        class="right">
         <div class="haveCursor button"
-             @click="togglePause()">
+          @click="togglePause()">
           <i class="icon-image-preview haveCursor resize center-vertical"
-             :class="marginsAndPauseIcons()"
-             :title="pausedTitle">
+            :class="marginsAndPauseIcons()"
+            :title="pausedTitle">
           </i>
         </div>
       </li>
@@ -80,12 +89,12 @@
 
     <div class="padding-content">
       <div class="grid-container"
-           v-if="!historical">
+        v-if="!historical">
         <template v-for="x in lineCharts">
           <div class="grid-item">
             <line-chart :ref="x.name + 'Chart'"
-                        :id="x.name + 'Chart'"
-                        :name="x.name"></line-chart>
+              :id="x.name + 'Chart'"
+              :name="x.name"></line-chart>
           </div>
         </template>
       </div>
@@ -100,27 +109,27 @@
 
           <div class="grid-item">Month:
             <select v-model="historicalRange.month"
-                    :disabled="!historicalRange.year">
+              :disabled="!historicalRange.year">
               <option v-for="x in app.historicalLogsList.month">{{x}}</option>
             </select>
           </div>
 
           <div class="grid-item">Day:
             <select v-model="historicalRange.day"
-                    :disabled="!historicalRange.month">
+              :disabled="!historicalRange.month">
               <option v-for="x in app.historicalLogsList.day">{{x}}</option>
             </select>
           </div>
 
           <div class="grid-item">Time:
             <select v-model="historicalRange.hour"
-                    :disabled="!historicalRange.day">
+              :disabled="!historicalRange.day">
               <option v-for="x in app.historicalLogsList.hour">{{x}}</option>
             </select>
           </div>
         </div>
         <div class="modal"
-             :class="displayModal()">
+          :class="displayModal()">
           <vue-simple-spinner line-fg-color="#917464">
           </vue-simple-spinner>
         </div>
@@ -128,8 +137,8 @@
           <template v-for="x in lineChartsHistorical">
             <div class="grid-item">
               <line-chart-historical :ref="x.name + 'HistoricalChart'"
-                                     :id="x.name + 'HistoricalChart'"
-                                     :name="x.name"></line-chart-historical>
+                :id="x.name + 'HistoricalChart'"
+                :name="x.name"></line-chart-historical>
             </div>
           </template>
         </div>
