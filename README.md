@@ -2,7 +2,7 @@
 A logging server and a separate server for web based live charting of Raspberry Shake data. The logger logs data received from your Shake's UDP output ([Raspberry Shake Data Producer UDP Port Output — Instructions on Setting Up Your Raspberry Shake](https://manual.raspberryshake.org/udp.html)). If you have a valid SSL certificate and enable https the web app will run as a PWA and be optionally installable on a number of platforms including Linux, Android and Windows ([Progressive Web Apps  |  Web  |  Google Developers](https://developers.google.com/web/progressive-web-apps/)).
 
 ## Demo
-[Live Demo with my Raspberry Shake](https://www2.tambeb.com)
+Live Demo with my Raspberry Shake (<-- will be back online shortly)
 
 Note: Settings for the web app are synced across all instances. So the demo will reflect whatever settings the last person to modify them chose (i.e., time-horizon, chart axis range, update frequency, etc.). If multiple people happen to be looking at the demo and one person changes something, it'll immediately reflect for everyone else. So if you notice weird things happening, this is likely why.   
 
