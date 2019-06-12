@@ -83,6 +83,6 @@ function appendNewLine( data, filename ) {
   )
 }
 process.on( 'uncaughtException', function ( err ) {
-  // var message = err.message;
-  // console.log( err );
+  var message = err.message;
+  console.log( err );
 } )
