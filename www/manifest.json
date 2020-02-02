@@ -1,46 +1,33 @@
 {
-  "name": "Raspberry Shake Monitor",
-  "short_name": "Shake Monitor",
-  "background_color": "#917464",
-  "theme_color": "#917464",
-  "icons": [
-    {
-      "src": "icon_36.png",
-      "sizes": "36x36",
-      "type": "image/png"
-    },
-    {
-      "src": "icon_48.png",
-      "sizes": "48x48",
-      "type": "image/png"
-    },
-    {
-      "src": "icon_72.png",
-      "sizes": "72x72",
-      "type": "image/png"
-    },
-    {
-      "src": "icon_96.png",
-      "sizes": "96x96",
-      "type": "image/png"
-    },
-    {
-      "src": "icon_144.png",
-      "sizes": "144x144",
-      "type": "image/png"
-    },
-    {
-      "src": "icon_192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "icon_512.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
-  ],
-  "start_url": "/",
-  "display": "standalone",
-  "orientation": "portrait"
+    "name": "Raspberry Shake Monitor",
+    "short_name": "Shake Monitor",
+    "background_color": "#FFFFFF",
+    "theme_color": "#4286f4",
+    "icons": [
+        {
+            "src": "icon_192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "icon_512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "icon_mask_192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "icon_mask_512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ],
+    "start_url": "/",
+    "display": "standalone",
+    "orientation": "portrait"
 }

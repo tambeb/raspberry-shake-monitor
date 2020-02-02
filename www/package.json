@@ -1,6 +1,6 @@
 {
   "name": "raspberry-shake-monitor",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Logging server and web based live charting of Raspberry Shake data",
   "main": "server.js",
   "scripts": {},
@@ -11,10 +11,10 @@
   "license": "MIT",
   "homepage": "https://github.com/tambeb/raspberry-shake-monitor",
   "dependencies": {
-    "chart.js": ">=2.8.0",
-    "lodash": ">=4.17.11",
-    "socket.io-client": ">=2.2.0",
-    "vue": ">=2.6.9",
+    "chart.js": "^2.9.3",
+    "lodash": "^4.17.15",
+    "socket.io-client": "^2.3.0",
+    "vue": "^2.6.11",
     "vue-simple-spinner": "^1.2.8"
   }
 }
