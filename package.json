@@ -21,6 +21,6 @@
     "google-closure-compiler-js": "^20200112.0.0",
     "javascript-algorithms-and-data-structures": ">=0.0.4",
     "lodash": "^4.17.15",
-    "socket.io": "^2.3.0"
+    "socket.io": "^2.4.0"
   }
 }
